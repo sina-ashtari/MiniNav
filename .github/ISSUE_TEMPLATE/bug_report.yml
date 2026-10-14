@@ -1,0 +1,39 @@
+name: Bug report
+description: Report a reproducible problem in the Android or Zepp app.
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Never include connection codes, notification text, routes, screenshots with personal data, or signing material.
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options: [Android app, Zepp app, Phone-side service, Documentation, Build or test]
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: 1. …
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Device and software versions
+      placeholder: Android version, watch model, Zepp version, app version

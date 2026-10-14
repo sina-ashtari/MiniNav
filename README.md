@@ -65,3 +65,7 @@ See [plan coverage and remaining gaps](docs/IMPLEMENTATION-STATUS.md), [release 
 ## Repository hygiene
 
 The repository intentionally excludes dependency directories, build output, Android SDK paths, local IDE/tool state, signing material, environment files, logs, and generated diagnostic packages. Keep credentials and release keys out of commits.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the branch, test, pull-request, and privacy expectations.
