@@ -1,26 +1,37 @@
-# MiniNav v1
+# MiniNav
 
-Android notification companion and Zepp OS mini app for **Amazfit Active Edge (360 × 360), Active 2 Round (466 × 466), and the existing 480-pixel round target (API 3.5)**. Development implementation, not yet device-certified or store-ready.
+MiniNav brings turn-by-turn navigation notifications from an Android phone to a Zepp OS watch. It comprises a local-only Android bridge and a Zepp mini app for **Amazfit Active Edge (360 × 360)**, **Active 2 Round (466 × 466)**, and the existing **480-pixel round** target (API 3.5).
 
-## Projects
+> Development implementation only — it has not yet been device-certified or prepared for store release.
 
-- `Android App`: Kotlin, Compose, Android 8+ / target API 36. User-started foreground service; bounded, authenticated, read-only localhost server.
-- `ZEPP App`: watch page and continuous AppService, Zepp phone-side polling service, one-time bridge settings. Uses the official ZML MessageBuilder transport and firmware vibration scenes.
-- `docs`: protocol, privacy, publishing information and physical-device acceptance checklist.
+## Repository layout
+
+- [`Android App`](Android%20App): Kotlin/Compose Android companion (Android 8+, target API 36) with a user-started foreground service and bounded, authenticated, read-only localhost bridge.
+- [`ZEPP App`](ZEPP%20App): Zepp page, background AppService, phone-side polling service, and one-time bridge settings. It uses the official ZML MessageBuilder transport and firmware vibration scenes.
+- [`docs`](docs): protocol, privacy, release notes, and the physical-device acceptance checklist.
+- [`diagnostics`](diagnostics): small development probes used to validate Zepp tooling and target behavior; not part of the shipping app.
+
+## Requirements
+
+- Android: JDK 17–22 and Android SDK 36.
+- Watch app: Node.js 22+ and a Zepp developer setup capable of installing development packages.
+- A physical Android phone and supported watch for end-to-end validation. The emulator and unit tests cannot certify notification parsing, watch lifecycle behavior, or vibration timing.
 
 ## Build and test
 
-Android: install JDK 17–22 and Android SDK 36, set `JAVA_HOME` and `ANDROID_HOME`, then run from `Android App`:
+Android: set `JAVA_HOME` and `ANDROID_HOME`, then run:
 
 ```powershell
+Set-Location 'Android App'
 .\gradlew.bat testDebugUnitTest assembleDebug bundleRelease
 ```
 
 Debug APK: `app/build/outputs/apk/debug/app-debug.apk`. Release AAB: `app/build/outputs/bundle/release/app-release.aab`. Release builds are **unsigned** unless the publisher signing environment variables in `docs/RELEASE.md` are supplied. Debug APKs use Android's development key, not a store key.
 
-Watch: Node.js 22+, from `ZEPP App`:
+Watch:
 
 ```powershell
+Set-Location 'ZEPP App'
 npm.cmd ci
 npm.cmd test
 npm.cmd run build
@@ -50,3 +61,7 @@ Use the English/Persian demo buttons only while stationary; Clear ends their syn
 - Police/speed-camera alerts, accounts, backend services, navigation history, analytics, ads and arbitrary vibration sequencing are intentionally excluded.
 
 See [plan coverage and remaining gaps](docs/IMPLEMENTATION-STATUS.md), [release and acceptance checklist](docs/RELEASE.md) and [protocol](docs/PROTOCOL.md).
+
+## Repository hygiene
+
+The repository intentionally excludes dependency directories, build output, Android SDK paths, local IDE/tool state, signing material, environment files, logs, and generated diagnostic packages. Keep credentials and release keys out of commits.
