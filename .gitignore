@@ -1,0 +1,40 @@
+# Dependencies and generated JavaScript output
+**/node_modules/
+**/dist/
+**/coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Android and Gradle build state
+**/.gradle/
+**/build/
+**/.kotlin/
+**/.externalNativeBuild/
+**/.cxx/
+**/local.properties
+**/captures/
+*.apk
+*.aab
+
+# Local IDE and tooling files
+**/.idea/
+*.iml
+.vs/
+.tools/
+
+# Secrets and signing material
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+key.properties
+
+# OS, logs, and generated diagnostic artifacts
+.DS_Store
+Thumbs.db
+*.log
+*.zip
+diagnostics/private-notification-captures/

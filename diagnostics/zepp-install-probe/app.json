@@ -1,0 +1,24 @@
+{
+  "configVersion": "v3",
+  "app": {
+    "appId": 20001,
+    "appName": "MiniNav Probe",
+    "appType": "app",
+    "version": { "code": 1, "name": "1.0.0" },
+    "icon": "icon.png",
+    "vender": "MiniNav development",
+    "description": "Installation diagnostic only"
+  },
+  "permissions": [],
+  "runtime": { "apiVersion": { "compatible": "4.2", "target": "4.2", "minVersion": "4.2" } },
+  "debug": false,
+  "targets": {
+    "active2": {
+      "module": { "page": { "pages": ["page/index"] } },
+      "platforms": [{ "deviceSource": 10092803 }],
+      "designWidth": 466
+    }
+  },
+  "i18n": { "en-US": { "appName": "MiniNav Probe" } },
+  "defaultLanguage": "en-US"
+}

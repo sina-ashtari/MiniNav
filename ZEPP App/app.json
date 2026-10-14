@@ -1,0 +1,60 @@
+{
+  "configVersion": "v3",
+  "app": {
+    "appId": 20001,
+    "appName": "MiniNav",
+    "appType": "app",
+    "version": { "code": 5, "name": "1.0.4" },
+    "icon": "icon.png",
+    "vender": "MiniNav development",
+    "description": "Private local navigation companion"
+  },
+  "permissions": ["data:os.device.info", "device:os.bg_service"],
+  "runtime": { "apiVersion": { "compatible": "3.5", "target": "3.5", "minVersion": "3.5" } },
+  "debug": false,
+  "targets": {
+    "activeedge": {
+      "module": {
+        "page": { "pages": ["page/index"] },
+        "app-service": { "services": ["app-service/index"] },
+        "app-side": { "path": "app-side/index" },
+        "setting": { "path": "setting/index" }
+      },
+      "platforms": [
+        { "deviceSource": 8388864 }, { "deviceSource": 8388865 }
+      ],
+      "designWidth": 360
+    },
+    "active2": {
+      "module": {
+        "page": { "pages": ["page/index"] },
+        "app-service": { "services": ["app-service/index"] },
+        "app-side": { "path": "app-side/index" },
+        "setting": { "path": "setting/index" }
+      },
+      "platforms": [
+        { "deviceSource": 8913152 }, { "deviceSource": 8913153 },
+        { "deviceSource": 8913155 }, { "deviceSource": 8913159 },
+        { "deviceSource": 10092800 }, { "deviceSource": 10092801 },
+        { "deviceSource": 10092803 }, { "deviceSource": 10092807 }
+      ],
+      "designWidth": 466
+    },
+    "balance2xt": {
+      "module": {
+        "page": { "pages": ["page/index"] },
+        "app-service": { "services": ["app-service/index"] },
+        "app-side": { "path": "app-side/index" },
+        "setting": { "path": "setting/index" }
+      },
+      "platforms": [
+        { "deviceSource": 10486016 },
+        { "deviceSource": 10486017 },
+        { "deviceSource": 10486019 }
+      ],
+      "designWidth": 480
+    }
+  },
+  "i18n": { "en-US": { "appName": "MiniNav" } },
+  "defaultLanguage": "en-US"
+}
